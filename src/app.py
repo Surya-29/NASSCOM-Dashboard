@@ -23,6 +23,9 @@ app.title = "Heat Wave and Air Index Prediction"
 #                      'Khammam', 'Nizamadad', 'Warangal']
 pred_heat_wave = pd.read_csv("Heat Wave.csv")
 pred_aqi_values = pd.read_csv("AQI_pred_23.csv")
+
+# pred_heat_wave = pd.read_csv("../Heat Wave.csv")
+# pred_aqi_values = pd.read_csv("../AQI_pred_23.csv")
 # pred_aqi_values['Date'] = pd.to_datetime(pred_aqi_values['Date'])
 
 
@@ -313,7 +316,7 @@ app.layout = html.Div(
 
         ],
             style={
-            "margin": "200px", "padding": "20px"
+            "margin": "200px", "padding": "20px", "border-style": "double"
         }),
         # html.Div(
         #     children=[
@@ -337,6 +340,14 @@ app.layout = html.Div(
         # ),
         html.Div([
             html.H3("Predicted AQI values for the year 2023"),
+            html.Ul(
+                children=[html.Li("AIR QUALITY STANDARDS"),
+                          html.Li("0-50    :   Good"),
+                          html.Li("51-100  :  Satisfactory"),
+                          html.Li(">100    :  Moderate - Poor")],
+                style={"font-family": "Garamond, serif", "font-size": "20px",
+                       "text-align": "center", "list-style-type": "none","width":"600px", "padding": "8px", "border-style": "solid"}
+            ),
             html.Div([
                 dcc.DatePickerSingle(
                     id='date-aqi',
@@ -361,7 +372,7 @@ app.layout = html.Div(
 
         ],
             style={
-            "margin": "200px", "padding": "20px"
+            "margin": "200px", "padding": "20px", "border-style": "double"
         }),
 
         html.Div(
@@ -400,7 +411,7 @@ app.layout = html.Div(
             ],
 
             style={
-                "margin": "200px", "padding": "20px"
+                "margin": "200px", "padding": "20px", "border-style": "double"
             }
         )
 
@@ -431,11 +442,11 @@ def update_temp(date):
 
     dff = pred_heat_wave.copy()
     dff = dff.set_index("Date")
-    adilabad = out + str(dff.loc[date]["Adilabad_Temp"])
-    karimnagar = out + str(dff.loc[date]["Karimnagar_Temp"])
-    khammam = out + str(dff.loc[date]["Khammam_Temp"])
-    nizamabad = out + str(dff.loc[date]["Nizamabad_Temp"])
-    warangal = out + str(dff.loc[date]["Warangal_Temp"])
+    adilabad = out + str(round(dff.loc[date]["Adilabad_Temp"],2))
+    karimnagar = out + str(round(dff.loc[date]["Karimnagar_Temp"],2))
+    khammam = out + str(round(dff.loc[date]["Khammam_Temp"],2))
+    nizamabad = out + str(round(dff.loc[date]["Nizamabad_Temp"],2))
+    warangal = out + str(round(dff.loc[date]["Warangal_Temp"],2))
 
     return adilabad, karimnagar, khammam, nizamabad, warangal
 
@@ -462,11 +473,11 @@ def update_aqi(date):
     data = pred_aqi_values.copy()
     data = data.set_index("month")
 
-    adilabad = out + str(data.loc[month]["Adilabad_predicted_mean"])
-    karimnagar = out + str(data.loc[month]["Karimnagar_predicted_mean"])
-    khammam = out + str(data.loc[month]["Khammam_predicted_mean"])
-    nizamabad = out + str(data.loc[month]["Nizamabad_predicted_mean"])
-    warangal = out + str(data.loc[month]["Warangal_predicted_mean"])
+    adilabad = out + str(round(data.loc[month]["Adilabad_predicted_mean"],2))
+    karimnagar = out + str(round(data.loc[month]["Karimnagar_predicted_mean"],2))
+    khammam = out + str(round(data.loc[month]["Khammam_predicted_mean"],2))
+    nizamabad = out + str(round(data.loc[month]["Nizamabad_predicted_mean"],2))
+    warangal = out + str(round(data.loc[month]["Warangal_predicted_mean"],2))
 
     return adilabad, karimnagar, khammam, nizamabad, warangal
 
