@@ -1,0 +1,8 @@
+pyproj
+plotly
+dash
+dash_bootstrap_components
+geopandas
+gunicorn
+pandas
+dash-tools
