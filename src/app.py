@@ -21,8 +21,8 @@ app.title = "Heat Wave and Air Index Prediction"
 # list_of_districts = [{'label': i, 'value': i} for i in list_of_districts]
 # list_of_districts = ['Adilabad', 'Karimnagar',
 #                      'Khammam', 'Nizamadad', 'Warangal']
-pred_heat_wave = pd.read_csv("src\Heat Wave.csv")
-pred_aqi_values = pd.read_csv("src\AQI_pred_23.csv")
+pred_heat_wave = pd.read_csv(r"src\Heat Wave.csv")
+pred_aqi_values = pd.read_csv(r"src\AQI_pred_23.csv")
 # pred_aqi_values['Date'] = pd.to_datetime(pred_aqi_values['Date'])
 
 
