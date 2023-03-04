@@ -21,8 +21,8 @@ app.title = "Heat Wave and Air Index Prediction"
 # list_of_districts = [{'label': i, 'value': i} for i in list_of_districts]
 # list_of_districts = ['Adilabad', 'Karimnagar',
 #                      'Khammam', 'Nizamadad', 'Warangal']
-pred_heat_wave = pd.read_csv("./data/Heat Wave.csv")
-pred_aqi_values = pd.read_csv("./data/AQI_pred_23.csv")
+pred_heat_wave = pd.read_csv("src\Heat Wave.csv")
+pred_aqi_values = pd.read_csv("src\AQI_pred_23.csv")
 # pred_aqi_values['Date'] = pd.to_datetime(pred_aqi_values['Date'])
 
 
@@ -67,7 +67,7 @@ def pred_plot(dataframe, value):
 
 adilabad_card = dbc.Card(
     [
-        dbc.CardImg(src=r"./static/Photo/Adilabad.png", top=True,
+        dbc.CardImg(src=r"/static/Photo/Adilabad.png", top=True,
                     style={"width": "150px", "height": "150px", 'margin': '20px 55px 0px 55px'}),
         dbc.CardBody(
             [
@@ -84,7 +84,7 @@ adilabad_card = dbc.Card(
 
 karimnagar_card = dbc.Card(
     [
-        dbc.CardImg(src=r"./static/Photo/Karimnagar.png", top=True,
+        dbc.CardImg(src=r"/static/Photo/Karimnagar.png", top=True,
                     style={"width": "150px", "height": "150px", 'margin': '20px 55px 0px 55px'}),
         dbc.CardBody(
             [
@@ -101,7 +101,7 @@ karimnagar_card = dbc.Card(
 
 khammam_card = dbc.Card(
     [
-        dbc.CardImg(src=r"./static/Photo/Khammam.png", top=True,
+        dbc.CardImg(src=r"/static/Photo/Khammam.png", top=True,
                     style={"width": "150px", "height": "150px", 'margin': '20px 55px 0px 55px'}),
         dbc.CardBody(
             [
@@ -118,7 +118,7 @@ khammam_card = dbc.Card(
 
 nizamabad_card = dbc.Card(
     [
-        dbc.CardImg(src=r"./static/Photo/Nizamabad.png", top=True,
+        dbc.CardImg(src=r"/static/Photo/Nizamabad.png", top=True,
                     style={"width": "150px", "height": "150px", 'margin': '20px 55px 0px 55px'}),
         dbc.CardBody(
             [
@@ -135,7 +135,7 @@ nizamabad_card = dbc.Card(
 
 warangal_card = dbc.Card(
     [
-        dbc.CardImg(src=r"./static/Photo/Warangal.png", top=True,
+        dbc.CardImg(src=r"/static/Photo/Warangal.png", top=True,
                     style={"width": "150px", "height": "150px", 'margin': '20px 55px 0px 55px'}),
         dbc.CardBody(
             [
@@ -152,7 +152,7 @@ warangal_card = dbc.Card(
 
 adilabad_card_aqi = dbc.Card(
     [
-        dbc.CardImg(src=r"./static/Photo/Adilabad.png", top=True,
+        dbc.CardImg(src=r"/static/Photo/Adilabad.png", top=True,
                     style={"width": "150px", "height": "150px", 'margin': '20px 55px 0px 55px'}),
         dbc.CardBody(
             [
@@ -169,7 +169,7 @@ adilabad_card_aqi = dbc.Card(
 
 karimnagar_card_aqi = dbc.Card(
     [
-        dbc.CardImg(src=r"./static/Photo/Karimnagar.png", top=True,
+        dbc.CardImg(src=r"/static/Photo/Karimnagar.png", top=True,
                     style={"width": "150px", "height": "150px", 'margin': '20px 55px 0px 55px'}),
         dbc.CardBody(
             [
@@ -186,7 +186,7 @@ karimnagar_card_aqi = dbc.Card(
 
 khammam_card_aqi = dbc.Card(
     [
-        dbc.CardImg(src=r"./static/Photo/Khammam.png", top=True,
+        dbc.CardImg(src=r"/static/Photo/Khammam.png", top=True,
                     style={"width": "150px", "height": "150px", 'margin': '20px 55px 0px 55px'}),
         dbc.CardBody(
             [
@@ -203,7 +203,7 @@ khammam_card_aqi = dbc.Card(
 
 nizamabad_card_aqi = dbc.Card(
     [
-        dbc.CardImg(src=r"./static/Photo/Nizamabad.png", top=True,
+        dbc.CardImg(src=r"/static/Photo/Nizamabad.png", top=True,
                     style={"width": "150px", "height": "150px", 'margin': '20px 55px 0px 55px'}),
         dbc.CardBody(
             [
@@ -220,7 +220,7 @@ nizamabad_card_aqi = dbc.Card(
 
 warangal_card_aqi = dbc.Card(
     [
-        dbc.CardImg(src=r"./static/Photo/Warangal.png", top=True,
+        dbc.CardImg(src=r"/static/Photo/Warangal.png", top=True,
                     style={"width": "150px", "height": "150px", 'margin': '20px 55px 0px 55px'}),
         dbc.CardBody(
             [
